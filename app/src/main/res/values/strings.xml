@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">SpiltWiseClone</string>
+    <string name="sign_up">Sign up</string>
+    <string name="log_in">Log in</string>
+    <string name="sign_in_with_google">Sign in with google</string>
+    <string name="full_name_hint">Full name</string>
+    <string name="back_btn">Back</string>
+    <string name="done_btn">Done</string>
+    <string name="hint_your_email_address">Your email Address</string>
+    <string name="hint_your_password">Your password</string>
+    <string name="hint_phone_optional">Phone #(optional)</string>
+    <string name="i_use_rupee_as_my_currency">I use Rupee as my currency</string>
+</resources>
