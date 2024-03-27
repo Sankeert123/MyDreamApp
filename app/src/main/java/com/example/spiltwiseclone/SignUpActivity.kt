@@ -1,8 +1,11 @@
 package com.example.spiltwiseclone
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Log
+import android.view.PixelCopy.Request
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -16,7 +19,7 @@ class SignUpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
-        val userName = findViewById<EditText>(R.id.edt_username)
+        val userName = findViewById<com.google.android.material.textfield.TextInputLayout>(R.id.edt_username)
         val innerConstraintlayout = findViewById<ConstraintLayout>(R.id.inner_constraint_layout)
         val userProfilePhoto = findViewById<ImageView>(R.id.img_profile_photo)
         val userEmailId = findViewById<EditText>(R.id.edt_emailaddress)
@@ -27,8 +30,8 @@ class SignUpActivity : AppCompatActivity() {
         val backBtn = findViewById<Button>(R.id.btn_back)
         val doneBtn = findViewById<Button>(R.id.btn_done)
 
-
-        userName.addTextChangedListener {
+        val userNameTextField  = userName.editText
+        userNameTextField?.addTextChangedListener {
             Log.d("Taggy", it.toString())
             if(it.toString().length == 2) {
 
@@ -36,5 +39,20 @@ class SignUpActivity : AppCompatActivity() {
             }
         }
 
+        // Setting onclick listener for Profile Image
+         userProfilePhoto.setOnClickListener {
+            openUserGallery()
+        }
     }
+
+
+    fun openUserGallery() {
+
+        val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+        startActivityForResult(intent, 1)
+    }
+
+
+
+
 }
