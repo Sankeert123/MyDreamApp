@@ -1,9 +1,10 @@
-package com.example.spiltwiseclone
+package com.example.mydreamapp
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.example.spiltwiseclone.R
 
 class UserLandingActivity : AppCompatActivity() {
 
@@ -21,6 +22,10 @@ class UserLandingActivity : AppCompatActivity() {
 
         }
 
+        logInBtn.setOnClickListener {
+            val intent = Intent(this,LogInActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 }

@@ -1,4 +1,4 @@
-package com.example.spiltwiseclone
+package com.example.mydreamapp
 
 import org.junit.Test
 

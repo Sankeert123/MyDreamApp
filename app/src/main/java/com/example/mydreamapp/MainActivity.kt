@@ -1,7 +1,8 @@
-package com.example.spiltwiseclone
+package com.example.mydreamapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.spiltwiseclone.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

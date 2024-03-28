@@ -1,4 +1,4 @@
-package com.example.spiltwiseclone
+package com.example.mydreamapp
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
