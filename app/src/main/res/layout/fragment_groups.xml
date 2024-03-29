@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/landing_page_background"
-    tools:context="com.example.mydreamapp.GroupsFragment">
+    tools:context="com.example.myapp.GroupsFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <com.google.android.material.textview.MaterialTextView

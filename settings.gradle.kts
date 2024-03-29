@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "SpiltWiseClone"
+rootProject.name = "MyApp"
 include(":app")

@@ -1,4 +1,4 @@
-package com.example.mydreamapp
+package com.example.myapp
 
 import android.content.Intent
 import android.graphics.BitmapFactory

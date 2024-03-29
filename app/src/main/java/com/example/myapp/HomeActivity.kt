@@ -1,12 +1,12 @@
-package com.example.mydreamapp
+package com.example.myapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.spiltwiseclone.R
 
-class MainActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_home)
     }
 }
