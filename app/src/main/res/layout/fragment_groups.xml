@@ -1,0 +1,61 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/landing_page_background"
+    tools:context="com.example.mydreamapp.GroupsFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/frg_txt_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/you_are_all_settled_up"
+        android:textSize="24sp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="28dp"/>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/frg_img_friends"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@color/white"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="80dp"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/frg_txt_friends"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/friends"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginHorizontal="132dp"
+        android:layout_marginVertical="100dp"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/frg_txt_no_expenses1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_expenses"
+        android:textSize="16sp"
+        android:layout_marginHorizontal="132dp"
+        android:layout_marginVertical="132dp"/>
+
+
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/frg_txt_start"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="132dp"
+        android:layout_marginVertical="324dp"
+        android:padding="8dp"
+        android:singleLine="true"
+        android:text="@string/start_a_new_group"
+        android:textSize="20sp" />
+
+
+
+</FrameLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/itm_groups"
+        android:icon="@drawable/group_icon"
+        android:title="@string/groups"/>
+
+    <item
+        android:id="@+id/itm_friends"
+        android:title="@string/friends"
+        android:icon="@drawable/friends_icon"/>
+
+    <item
+        android:id="@+id/itm_activity"
+        android:icon="@drawable/activity_icon"
+        android:title="@string/activity"/>
+
+    <item
+        android:id="@+id/itm_account"
+        android:title="@string/account"
+        android:icon="@drawable/account_icon"/>
+</menu>

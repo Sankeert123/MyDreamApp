@@ -10,8 +10,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.SpiltWiseClone"
+        android:theme="@style/Theme.MyDreamApp"
         tools:targetApi="31">
+        <activity
+            android:name="com.example.mydreamapp.HomeActivity"
+            android:exported="false" />
         <activity
             android:name="com.example.mydreamapp.LogInActivity"
             android:exported="false" />

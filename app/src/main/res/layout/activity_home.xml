@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/landing_page_background"
+    tools:context="com.example.mydreamapp.HomeActivity">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@android:color/transparent"
+        app:itemIconTint="@color/bottom_navigation_selected_color"
+        app:itemTextColor="@color/bottom_navigation_selected_color"
+        app:menu="@menu/bottom_navigation_icons"
+        app:itemRippleColor="@android:color/transparent"
+        app:labelVisibilityMode="labeled" />
+
+
+</FrameLayout>

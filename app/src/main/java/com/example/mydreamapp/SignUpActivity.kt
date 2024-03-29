@@ -18,6 +18,7 @@ import com.example.spiltwiseclone.R
 
 class SignUpActivity : AppCompatActivity() {
 
+    lateinit var userProfilePhoto: ImageView
     companion object {
 
         const val REQUEST_CODE = 3
@@ -28,7 +29,7 @@ class SignUpActivity : AppCompatActivity() {
 
         val userName = findViewById<com.google.android.material.textfield.TextInputLayout>(R.id.edt_username)
         val innerConstraintlayout = findViewById<ConstraintLayout>(R.id.inner_constraint_layout)
-        val userProfilePhoto = findViewById<ImageView>(R.id.img_profile_photo)
+        userProfilePhoto = findViewById(R.id.img_profile_photo)
         val userEmailId = findViewById<EditText>(R.id.edt_emailaddress)
         val userPassword = findViewById<EditText>(R.id.edt_emailpassword)
         val countryCode = findViewById<EditText>(R.id.edt_country_code)
@@ -69,6 +70,8 @@ class SignUpActivity : AppCompatActivity() {
             if(imageUri != null) {
              val  bitMap = BitmapFactory.decodeStream(contentResolver.openInputStream(imageUri))
 
+                userProfilePhoto.setImageBitmap(bitMap)
+                userProfilePhoto.background = null
 
 
             }
