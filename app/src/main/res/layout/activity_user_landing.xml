@@ -12,11 +12,12 @@
         android:id="@+id/img_logo"
         android:layout_width="@dimen/landing_image_width"
         android:layout_height="@dimen/landing_image_height"
+        android:layout_marginTop="120dp"
         android:src="@drawable/ic_bullet"
-        app:layout_constraintBottom_toTopOf="@id/btn_signup"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_signup"
@@ -24,16 +25,16 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:layout_marginEnd="44dp"
-        android:text="@string/sign_up"
-        android:textSize="24sp"
-        android:textColor="@color/black"
-        app:cornerRadius="@dimen/button_radius"
         android:backgroundTint="@color/button_background_tilt"
+        android:text="@string/sign_up"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:cornerRadius="@dimen/button_radius"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_logo"
-        app:layout_constraintVertical_bias="0.5" />
+app:layout_constraintTop_toBottomOf="@id/guideline"
+        app:layout_constraintVertical_bias="0.1" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_login"
@@ -42,10 +43,10 @@
         android:layout_marginStart="44dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="44dp"
-        android:text="@string/log_in"
-        android:textSize="24sp"
-        android:textColor="@color/black"
         android:backgroundTint="@color/button_background_tilt"
+        android:text="@string/log_in"
+        android:textColor="@color/black"
+        android:textSize="24sp"
         app:cornerRadius="@dimen/button_radius"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,14 +59,21 @@
         android:layout_marginStart="44dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="44dp"
+        android:backgroundTint="@color/button_background_tilt"
         android:text="@string/sign_in_with_google"
         android:textColor="@color/black"
         android:textSize="24sp"
-        android:backgroundTint="@color/button_background_tilt"
         app:cornerRadius="@dimen/button_radius"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="424dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
