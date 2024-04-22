@@ -22,4 +22,6 @@
     <string name="no_expenses">no expenses</string>
     <string name="non_group_expenses">Non-group expenses</string>
     <string name="start_a_new_group">Start a new group</string>
+    <string name="menu_search">search</string>
+    <string name="menu_add_friend">add friend</string>
 </resources>

@@ -2,6 +2,7 @@ package com.example.myapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
 import android.widget.FrameLayout
 import android.widget.Toolbar
@@ -13,14 +14,18 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-        val home_toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.home_toolbar)
-        setSupportActionBar(home_toolbar)
-        home_toolbar.inflateMenu(R.menu.toolbar_items)
 
+        // Setting Tool bar
+        val home_toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.home_toolbar)
+        home_toolbar.title = ""
+        setSupportActionBar(home_toolbar)
+
+        // Setting the default fragment
         val grpFragment = GroupsFragment()
         val homeFrameLayout = findViewById<FrameLayout>(R.id.home_frame_layout)
         supportFragmentManager.beginTransaction().replace(R.id.home_frame_layout, grpFragment).commit()
 
+        // Setting the fragment on bottom navigation click
         val nav_layout = findViewById<BottomNavigationView>(R.id.bottom_nav_layout)
         nav_layout.setOnItemSelectedListener {
             when(it.itemId) {
@@ -35,5 +40,11 @@ class HomeActivity : AppCompatActivity() {
 
         }
 
+    }
+
+    // Inflating menu in the tool bar
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.toolbar_items, menu)
+        return super.onCreateOptionsMenu(menu)
     }
 }
