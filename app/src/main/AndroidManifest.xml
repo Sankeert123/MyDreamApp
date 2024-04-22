@@ -12,10 +12,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MyDreamApp"
+        android:theme="@style/Theme.myApp"
         tools:targetApi="31">
         <activity
-            android:name="com.example.myapp.CreateGroupActivity"
+            android:name="com.example.myApp.CreateGroupActivity"
             android:exported="false" />
         <activity
             android:name="com.example.myapp.HomeActivity"
