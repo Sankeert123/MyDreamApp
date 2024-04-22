@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.spiltwiseclone.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -26,12 +29,25 @@ class GroupsFragment : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_groups, container, false)
+          val rootView: View  = inflater.inflate(R.layout.fragment_groups, container, false)
+
+          return rootView
     }
 
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val rvGroups = view.findViewById<RecyclerView>(R.id.rv_grp_fragment)
+        rvGroups.layoutManager = LinearLayoutManager(activity)
+        // val itemSrc = (GroupsItemdData("images/avatars/spunky-sam.png", "Friends", "no expenses"))
+        val dataList = listOf(
+            GroupsItemdData("https://picsum.photos/seed/picsum/200/300", "Friends", "No expenses"),
+            GroupsItemdData("https://via.placeholder.com/300.png/09f/fff","Non - Group expenses", "no expenses"))
+        rvGroups.adapter = GroupRVAdapter(dataList)
+    }
 }

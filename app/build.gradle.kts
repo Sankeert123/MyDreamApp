@@ -47,4 +47,8 @@ dependencies {
 
     //Material Text field dependency
     implementation ("com.google.android.material:material:1.11.0")
+
+    //Glide dependency to load Images
+    implementation ("com.github.bumptech.glide:glide:4.14.2")
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.14.2")
 }

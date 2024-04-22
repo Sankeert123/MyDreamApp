@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyDreamApp</string>
+    <string name="app_name">MyApp</string>
     <string name="sign_up">Sign up</string>
     <string name="log_in">Log in</string>
     <string name="sign_in_with_google">Sign in with google</string>
