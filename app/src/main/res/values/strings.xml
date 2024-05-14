@@ -24,4 +24,27 @@
     <string name="start_a_new_group">Start a new group</string>
     <string name="menu_search">search</string>
     <string name="menu_add_friend">add friend</string>
+    <string name="welcome_to_search_page">Welcome to Search page</string>
+    <string name="add_friends_to_group">Add Friends To Group</string>
+    <string name="all_groups">All groups</string>
+    <string name="outstanding_balances">Outstanding balances</string>
+    <string name="groups_you_owe">Groups you owe</string>
+    <string name="groups_that_owe_you">Groups that owe you</string>
+    <string name="username">Sankeert</string>
+    <string name="exaple_email_id">ksdbckwk@gmail.com</string>
+    <string name="scan_code">Scan Code</string>
+    <string name="my_app_pro">My App Pro</string>
+    <string name="preferences">Preferences</string>
+    <string name="email_settings">Email Settings</string>
+    <string name="device_and_push_notification_settings">Device and push notification settings</string>
+    <string name="passcode">Passcode</string>
+    <string name="feedback">Feedback</string>
+    <string name="rate_myapp">Rate My App</string>
+    <string name="contact_support">Contact My App Support</string>
+    <string name="logout">Log Out</string>
+    <string name="made_with_gem_in_providence_ka_ind">Made with gem in providence, Ka, Ind</string>
+    <string name="copyright_2024_myapp_inc">Copyright 2024 myApp, Inc.</string>
+    <string name="p_s_bunnies">P.S.Bunnies!</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="version">v24.4.2/758</string>
 </resources>

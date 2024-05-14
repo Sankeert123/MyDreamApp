@@ -1,10 +1,10 @@
-package com.example.myapp
+package com.example.myApp.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import com.example.spiltwiseclone.R
+import com.example.myApp.R
 
 class UserLandingActivity : AppCompatActivity() {
 
@@ -17,13 +17,13 @@ class UserLandingActivity : AppCompatActivity() {
         val googleSignInBtn = findViewById<Button>(R.id.btn_signin_with_google)
 
         signUpBtn.setOnClickListener {
-            val intent = Intent(this,SignUpActivity::class.java)
+            val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
 
         }
 
         logInBtn.setOnClickListener {
-            val intent = Intent(this,LogInActivity::class.java)
+            val intent = Intent(this, LogInActivity::class.java)
             startActivity(intent)
         }
 

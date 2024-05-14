@@ -1,20 +1,22 @@
-package com.example.myapp
+package com.example.myApp.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.spiltwiseclone.R
+import com.example.myApp.databinding.ActivityLoginBinding
 
 class LogInActivity : AppCompatActivity() {
+
+    private lateinit var _binding: ActivityLoginBinding
+    private val binding get() = _binding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        _binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val logInBtn = findViewById<com.google.android.material.button.MaterialButton>(R.id.btn_login_activity)
 
-
-        logInBtn.setOnClickListener {
-            val intent = Intent(this,HomeActivity::class.java)
+        binding.btnLoginActivity.setOnClickListener {
+            val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
         }
 

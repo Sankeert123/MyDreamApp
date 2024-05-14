@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/landing_page_background"
-    tools:context="com.example.myapp.UserLandingActivity">
+    tools:context="com.example.myApp.activities.UserLandingActivity">
 
 
     <ImageView

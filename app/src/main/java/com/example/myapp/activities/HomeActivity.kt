@@ -1,32 +1,32 @@
-package com.example.myapp
+package com.example.myApp.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.FrameLayout
-import com.example.myApp.AccountsFragment
-import com.example.myApp.SearchToolbarActivity
-import com.example.myApp.StartNewGroupActivity
-import com.example.spiltwiseclone.R
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.example.myApp.fragments.AccountsFragment
+import com.example.myApp.fragments.GroupsFragment
+import com.example.myApp.R
+import com.example.myApp.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
 
-    lateinit var home_toolbar: androidx.appcompat.widget.Toolbar
+    private lateinit var _binding: ActivityHomeBinding
+    private val binding get() = _binding
     lateinit var addGrpsItem : MenuItem
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        _binding = ActivityHomeBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
 
         // Setting Tool bar
-        home_toolbar = findViewById(R.id.home_toolbar)
-        home_toolbar.title = ""
-
-        setSupportActionBar(home_toolbar)
+        binding.homeToolbar.title = ""
+        setSupportActionBar(binding.homeToolbar)
 
         // Setting click listeners to tool bar elements
-        home_toolbar.setOnMenuItemClickListener {
+        binding.homeToolbar.setOnMenuItemClickListener {
             when (it.itemId) {
                 R.id.searchIcon -> {
                     val intent = Intent(this, SearchToolbarActivity::class.java)
@@ -47,13 +47,11 @@ class HomeActivity : AppCompatActivity() {
         // Setting the default fragment
         val grpFragment = GroupsFragment()
         val accountsFragment = AccountsFragment()
-        val homeFrameLayout = findViewById<FrameLayout>(R.id.home_frame_layout)
         supportFragmentManager.beginTransaction().replace(R.id.home_frame_layout, grpFragment).commit()
 
 
         // Setting the fragment on bottom navigation click
-        val nav_layout = findViewById<BottomNavigationView>(R.id.bottom_nav_layout)
-        nav_layout.setOnItemSelectedListener {
+        binding.bottomNavLayout.setOnItemSelectedListener {
             when(it.itemId) {
                 R.id.itm_groups -> {
                         supportFragmentManager.beginTransaction()
@@ -76,7 +74,7 @@ class HomeActivity : AppCompatActivity() {
     // Inflating menu in the tool bar
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.toolbar_items, menu)
-         addGrpsItem = home_toolbar.menu.findItem(R.id.add_groups)
+         addGrpsItem = binding.homeToolbar.menu.findItem(R.id.add_groups)
         return super.onCreateOptionsMenu(menu)
     }
 }

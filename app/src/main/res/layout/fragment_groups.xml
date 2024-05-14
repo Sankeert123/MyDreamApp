@@ -1,10 +1,12 @@
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/landing_page_background"
-    tools:context="com.example.myapp.GroupsFragment"
+    tools:context="com.example.myApp.fragments.GroupsFragment"
     android:id="@+id/grp_fragment">
 
     <com.google.android.material.textview.MaterialTextView
@@ -13,11 +15,24 @@
         android:layout_height="wrap_content"
         android:text="@string/you_are_all_settled_up"
         android:textColor="@color/white"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:layout_marginTop="50dp"
-        android:layout_marginStart="44dp"
+        android:layout_marginStart="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/groups_filterIcon"
+        android:layout_width="40dp"
+        android:layout_height="36dp"
+        android:src="@drawable/filter_icon_white"
+        android:layout_marginEnd="16dp"
+        app:flow_horizontalAlign="end"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintTop_toTopOf="@+id/frg_txt_header"
+        app:layout_constraintStart_toEndOf="@+id/frg_txt_header"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_grp_fragment"

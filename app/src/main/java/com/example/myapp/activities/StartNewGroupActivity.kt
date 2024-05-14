@@ -1,8 +1,8 @@
-package com.example.myApp
+package com.example.myApp.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.spiltwiseclone.R
+import com.example.myApp.R
 
 class StartNewGroupActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,4 +1,4 @@
-package com.example.myapp
+package com.example.myApp.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +7,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.spiltwiseclone.R
+import com.example.myapp.GroupsItemdData
+import com.example.myApp.R
 
 class GroupRVAdapter(private val itemList: List<GroupsItemdData>) : RecyclerView.Adapter<GroupRVAdapter.viewHolder>() {
 

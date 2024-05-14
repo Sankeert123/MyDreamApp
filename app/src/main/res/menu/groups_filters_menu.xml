@@ -1,4 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<group
+    android:id="@+id/flt_group"
+    android:checkableBehavior="single">
+    <item
+        android:id="@+id/flt_all_groups"
+        android:title="@string/all_groups"
+        app:showAsAction="withText"
+        android:actionLayout="@layout/filter_menu_items"/>
+
+    <item
+        android:id="@+id/flt_outstanding_balances"
+        android:title="@string/outstanding_balances"
+        app:showAsAction="withText"
+        android:actionLayout="@layout/filter_menu_items"/>
+
+    <item
+        android:id="@+id/flt_groups_you_owe"
+        android:title="@string/groups_you_owe"
+        app:showAsAction="withText"
+        android:actionLayout="@layout/filter_menu_items"/>
+
+    <item
+        android:id="@+id/flt_groups_that_owe_you"
+        android:title="@string/groups_that_owe_you"
+        app:showAsAction="withText"
+        android:actionLayout="@layout/filter_menu_items"/>
+</group>
 
 </menu>

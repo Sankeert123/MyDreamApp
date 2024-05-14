@@ -1,4 +1,4 @@
-package com.example.myapp
+package com.example.myApp.activities
 
 import android.content.Intent
 import android.graphics.BitmapFactory
@@ -12,44 +12,54 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.widget.addTextChangedListener
-import com.example.spiltwiseclone.R
+import com.example.myApp.R
+import com.example.myApp.databinding.ActivitySignUpBinding
 
 class SignUpActivity : AppCompatActivity() {
 
-    lateinit var userProfilePhoto: ImageView
+    private lateinit var _binding: ActivitySignUpBinding
+    private val binding get() = _binding
+
     companion object {
 
         const val REQUEST_CODE = 3
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sign_up)
+        _binding = ActivitySignUpBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val userName = findViewById<com.google.android.material.textfield.TextInputLayout>(R.id.edt_username)
-        val innerConstraintlayout = findViewById<ConstraintLayout>(R.id.inner_constraint_layout)
-        userProfilePhoto = findViewById(R.id.img_profile_photo)
-        val userEmailId = findViewById<EditText>(R.id.edt_emailaddress)
-        val userPassword = findViewById<EditText>(R.id.edt_emailpassword)
-        val countryCode = findViewById<EditText>(R.id.edt_country_code)
-        val userPhoneNumber = findViewById<EditText>(R.id.edt_phonenumber)
-        val currencySuggestionText = findViewById<TextView>(R.id.txt_currency_suggestion)
-        val backBtn = findViewById<Button>(R.id.btn_back)
-        val doneBtn = findViewById<Button>(R.id.btn_done)
 
-        val userNameTextField  = userName.editText
+        val userNameTextField  = binding.edtUsername.editText
         userNameTextField?.addTextChangedListener {
+
             Log.d("Taggy", it.toString())
             if(it.toString().length == 2) {
 
-                innerConstraintlayout.visibility  = View.VISIBLE
+                binding.innerConstraintLayout.visibility  = View.VISIBLE
             }
         }
 
         // Setting onclick listener for Profile Image
-         userProfilePhoto.setOnClickListener {
+         binding.imgProfilePhoto.setOnClickListener {
             openUserGallery()
+        }
+
+        // Setting onclick for Done button
+        binding.btnDone.setOnClickListener {
+            if (binding.edtUsername.editText?.text.toString().isEmpty()) {
+                Toast.makeText(
+                    this@SignUpActivity,
+                    "Please enter your name",
+                    Toast.LENGTH_SHORT
+                ).show()
+            } else {
+                val intent = Intent(this, HomeActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
 
@@ -70,8 +80,8 @@ class SignUpActivity : AppCompatActivity() {
             if(imageUri != null) {
              val  bitMap = BitmapFactory.decodeStream(contentResolver.openInputStream(imageUri))
 
-                userProfilePhoto.setImageBitmap(bitMap)
-                userProfilePhoto.background = null
+                binding.imgProfilePhoto.setImageBitmap(bitMap)
+                binding.imgProfilePhoto.background = null
 
 
             }

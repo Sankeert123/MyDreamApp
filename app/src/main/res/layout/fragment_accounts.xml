@@ -1,13 +1,361 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.myApp.AccountsFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+<androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@drawable/landing_page_background"
+        tools:context="com.example.myApp.fragments.AccountsFragment"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/accounts_constraintlayout"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
 
-</FrameLayout>
+    <!-- TODO: Update blank fragment layout -->
+        <ScrollView
+            android:id="@+id/accounts_scrollview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/scrollview_inside_constll"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+                <TextView
+                    android:id="@+id/account_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/account"
+                android:textSize="25sp"
+                android:layout_margin="16dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_gravity="start"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <ImageView
+                android:id="@+id/accounts_profile_upload"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:src="@drawable/default_profile_icon_foreground"
+                android:layout_margin="16dp"
+                android:background="@drawable/account_profile_bg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/account_tv"/>
+
+            <TextView
+                android:id="@+id/name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/username"
+                android:layout_marginTop="28dp"
+                android:layout_marginStart="16dp"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@+id/accounts_profile_upload"
+                app:layout_constraintTop_toBottomOf="@+id/account_tv"/>
+            <TextView
+                android:id="@+id/accounts_email_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/exaple_email_id"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintTop_toBottomOf="@+id/name_tv"
+                app:layout_constraintStart_toEndOf="@+id/accounts_profile_upload"/>
+            <ImageView
+                android:id="@+id/accounts_edit_image"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/edit_icon"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="36dp"
+                app:layout_constraintTop_toBottomOf="@+id/account_tv"
+                app:layout_constraintEnd_toEndOf="parent"/>
+            <View
+                android:id="@+id/view_bar"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/white"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/accounts_profile_upload"/>
+
+            <ImageView
+                android:id="@+id/scan_iv"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/scan_image"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_bar"/>
+
+
+            <TextView
+                android:id="@+id/scan_code_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/scan_code"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toEndOf="@+id/scan_iv"
+                app:layout_constraintTop_toBottomOf="@+id/view_bar"/>
+
+            <ImageView
+                android:id="@+id/diamond_iv"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/diamond_image"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scan_iv"/>
+
+
+            <TextView
+                android:id="@+id/myapp_pro_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/my_app_pro"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toEndOf="@+id/scan_iv"
+                app:layout_constraintTop_toBottomOf="@+id/scan_code_tv"/>
+
+            <TextView
+                android:id="@+id/preferences"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/preferences"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/diamond_iv"/>
+
+            <ImageView
+                android:id="@+id/email_iv"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/email_image"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/preferences"/>
+
+
+            <TextView
+                android:id="@+id/email_settings_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/email_settings"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toEndOf="@+id/email_iv"
+                app:layout_constraintTop_toBottomOf="@+id/preferences"/>
+
+            <ImageView
+                android:id="@+id/notification_iv"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/notification_image"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/email_iv"/>
+
+            <TextView
+                android:id="@+id/notification_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/device_and_push_notification_settings"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:maxLines="2"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toEndOf="@+id/notification_iv"
+                app:layout_constraintTop_toBottomOf="@+id/email_settings_tv"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <ImageView
+                android:id="@+id/passcode_iv"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/passcode_image"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/notification_iv"/>
+
+            <TextView
+                android:id="@+id/passcode_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/passcode"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toEndOf="@+id/passcode_iv"
+                app:layout_constraintTop_toBottomOf="@+id/notification_tv"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/feedback_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/feedback"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/passcode_iv"/>
+
+            <ImageView
+                android:id="@+id/star_iv"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/star_image"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/feedback_tv"/>
+
+            <TextView
+                android:id="@+id/rating_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/rate_myapp"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toEndOf="@+id/star_iv"
+                app:layout_constraintTop_toBottomOf="@+id/feedback_tv"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <ImageView
+                android:id="@+id/contact_support_iv"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/contact_support_image"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/star_iv"/>
+
+            <TextView
+                android:id="@+id/contact_support_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/contact_support"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toEndOf="@+id/contact_support_iv"
+                app:layout_constraintTop_toBottomOf="@+id/rating_tv"
+                app:layout_constraintEnd_toEndOf="parent"/>
+            <View
+                android:id="@+id/view_bar2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/contact_support_iv"/>
+
+            <ImageView
+                android:id="@+id/logout_iv"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/logout_image"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_bar2"/>
+
+            <TextView
+                android:id="@+id/logout_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/logout"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toEndOf="@+id/logout_iv"
+                app:layout_constraintTop_toBottomOf="@+id/view_bar2"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/made_with_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/made_with_gem_in_providence_ka_ind"
+                android:textColor="@color/white"
+                android:layout_marginTop="40dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/logout_tv"/>
+
+            <TextView
+                android:id="@+id/copyright_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/copyright_2024_myapp_inc"
+                android:textColor="@color/white"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/made_with_tv"/>
+
+            <TextView
+                android:id="@+id/name_developer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/p_s_bunnies"
+                android:textColor="@color/white"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/copyright_tv"/>
+
+            <TextView
+                android:id="@+id/p_policy_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/privacy_policy"
+                android:textColor="@color/white"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/name_developer"/>
+
+            <TextView
+                android:id="@+id/version_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/version"
+                android:textColor="@color/white"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/p_policy_tv"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>

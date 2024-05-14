@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.spiltwiseclone"
+    namespace = "com.example.myApp"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.spiltwiseclone"
+        applicationId = "com.example.myApp"
         minSdk = 26
         targetSdk = 34
         versionCode = 1
@@ -26,6 +26,15 @@ android {
             )
         }
     }
+
+    // View Binding enabling
+    buildFeatures {
+        viewBinding {
+            enable = true
+        }
+    }
+
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
