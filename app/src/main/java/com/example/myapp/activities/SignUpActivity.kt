@@ -8,14 +8,8 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.widget.addTextChangedListener
-import com.example.myApp.R
 import com.example.myApp.databinding.ActivitySignUpBinding
 
 class SignUpActivity : AppCompatActivity() {
@@ -57,6 +51,8 @@ class SignUpActivity : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
             } else {
+                val sharedPreferences = getSharedPreferences("Applogin", MODE_PRIVATE)
+                sharedPreferences.edit().putBoolean("isLoggedIn",true).apply()
                 val intent = Intent(this, HomeActivity::class.java)
                 startActivity(intent)
             }
