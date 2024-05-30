@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.myApp.activities.SearchToolbarActivity">
+    tools:context="com.example.myApp.ui.activities.SearchToolbarActivity">
 
     <TextView
         android:id="@+id/search_activity_text"

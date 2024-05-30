@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.myApp.activities.StartNewGroupActivity">
+    tools:context="com.example.myApp.ui.activities.StartNewGroupActivity">
 
     <TextView
         android:id="@+id/startgrp_activity_text"

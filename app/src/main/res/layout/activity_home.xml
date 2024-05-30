@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/landing_page_background"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.example.myApp.activities.HomeActivity">
+    tools:context="com.example.myApp.ui.activities.HomeActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/home_toolbar"

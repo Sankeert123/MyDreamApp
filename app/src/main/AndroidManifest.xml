@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".MyAppApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -15,22 +16,22 @@
         android:theme="@style/Theme.myApp"
         tools:targetApi="31">
         <activity
-            android:name="com.example.myApp.activities.SearchToolbarActivity"
+            android:name="com.example.myApp.ui.activities.SearchToolbarActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.myApp.activities.StartNewGroupActivity"
+            android:name="com.example.myApp.ui.activities.StartNewGroupActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.myApp.activities.HomeActivity"
+            android:name="com.example.myApp.ui.activities.HomeActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.myApp.activities.LogInActivity"
+            android:name="com.example.myApp.ui.activities.LogInActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.myApp.activities.SignUpActivity"
+            android:name="com.example.myApp.ui.activities.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.myApp.activities.UserLandingActivity"
+            android:name="com.example.myApp.ui.activities.UserLandingActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

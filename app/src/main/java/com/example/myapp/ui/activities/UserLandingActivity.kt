@@ -1,12 +1,10 @@
-package com.example.myApp.activities
+package com.example.myApp.ui.activities
 
 import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import com.example.myApp.R
 import com.example.myApp.databinding.ActivityUserLandingBinding
 
 class UserLandingActivity : AppCompatActivity() {
