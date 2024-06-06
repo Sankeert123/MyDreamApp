@@ -5,7 +5,6 @@ import android.content.Context
 interface AppContainer {
 
     val myAppRepository: MyAppRepository
-
 }
 
 class DefaultAppContainer(context: Context): AppContainer {

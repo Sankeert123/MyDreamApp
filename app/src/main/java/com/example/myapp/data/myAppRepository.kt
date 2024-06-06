@@ -6,18 +6,18 @@ interface MyAppRepository {
 
 
     // Retrieve all items from the Database
-    fun getAllLoginDetails(): Flow<List<LoginDetail>>
+    fun getAllLoginDetailsStream(): Flow<List<LoginDetail>>
 
     // Retrieving single item with id
-    fun getLoginDetail(id: Int): Flow<LoginDetail>
+    fun getLoginDetailStream(id: Int): Flow<LoginDetail>
 
     // Inserting a LoginDetail
-    suspend fun insertLoginDetail(loginDetail: LoginDetail)
+    suspend fun insertLoginDetailStream(loginDetail: LoginDetail)
 
     // Deleting a LoginDetail
-    suspend fun deleteLoginDetail(loginDetail: LoginDetail)
+    suspend fun deleteLoginDetailStream(loginDetail: LoginDetail)
 
     // Updating a LoginDetail
-    suspend fun updateLoginDetail(loginDetail: LoginDetail)
+    suspend fun updateLoginDetailStream(loginDetail: LoginDetail)
 
 }

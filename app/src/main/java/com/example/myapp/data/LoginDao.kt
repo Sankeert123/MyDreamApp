@@ -20,5 +20,8 @@ interface LoginDao {
     suspend fun deleteLoginDetail(loginDetail: LoginDetail)
 
     @Query("SELECT * FROM loginTable ORDER BY userName ASC")
-    suspend fun getAllLoginDetail(): Flow<List<LoginDetail>>
+    fun getAllLoginDetail(): Flow<List<LoginDetail>>
+
+    @Query("SELECT * FROM loginTable WHERE id = :id")
+    fun getLoginDetail(id: Int): Flow<LoginDetail>
 }

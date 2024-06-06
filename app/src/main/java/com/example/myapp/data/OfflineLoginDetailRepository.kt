@@ -3,24 +3,24 @@ package com.example.myApp.data
 import kotlinx.coroutines.flow.Flow
 
 class OfflineLoginDetailRepository(private val loginDao: LoginDao): MyAppRepository {
-    override fun getAllLoginDetails(): Flow<List<LoginDetail>> {
-        TODO("Not yet implemented")
+    override fun getAllLoginDetailsStream(): Flow<List<LoginDetail>> {
+        return  loginDao.getAllLoginDetail()
     }
 
-    override fun getLoginDetail(id: Int): Flow<LoginDetail> {
-        TODO("Not yet implemented")
+    override fun getLoginDetailStream(id: Int): Flow<LoginDetail> {
+        return loginDao.getLoginDetail(id = id)
     }
 
-    override suspend fun insertLoginDetail(loginDetail: LoginDetail) {
-        TODO("Not yet implemented")
+    override suspend fun insertLoginDetailStream(loginDetail: LoginDetail) {
+       return loginDao.insertingToLoginDetail(loginDetail = loginDetail)
     }
 
-    override suspend fun deleteLoginDetail(loginDetail: LoginDetail) {
-        TODO("Not yet implemented")
+    override suspend fun deleteLoginDetailStream(loginDetail: LoginDetail) {
+       return loginDao.deleteLoginDetail(loginDetail = loginDetail)
     }
 
-    override suspend fun updateLoginDetail(loginDetail: LoginDetail) {
-        TODO("Not yet implemented")
+    override suspend fun updateLoginDetailStream(loginDetail: LoginDetail) {
+        return loginDao.updatingLoginDetail(loginDetail = loginDetail)
     }
 
 

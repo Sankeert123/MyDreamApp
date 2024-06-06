@@ -11,12 +11,21 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
-import com.example.myApp.databinding.ActivitySignUpBinding
+import com.example.myApp.MyAppApplication
+import com.example.myApp.data.DefaultAppContainer
+import com.example.myApp.data.MyAppRepository
 
-class SignUpActivity : AppCompatActivity() {
+import com.example.myApp.databinding.ActivitySignUpBinding
+import javax.inject.Inject
+
+
+class SignUpActivity: AppCompatActivity() {
 
     private lateinit var _binding: ActivitySignUpBinding
     private val binding get() = _binding
+
+    @Inject
+    lateinit var myAppRepository: MyAppRepository
 
     companion object {
 
@@ -28,6 +37,9 @@ class SignUpActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
+
+
+
         val userNameTextField  = binding.edtUsername.editText
         userNameTextField?.addTextChangedListener {
 
@@ -36,6 +48,7 @@ class SignUpActivity : AppCompatActivity() {
 
                 binding.innerConstraintLayout.visibility  = View.VISIBLE
             }
+
         }
 
         // Setting onclick listener for Profile Image
@@ -45,15 +58,27 @@ class SignUpActivity : AppCompatActivity() {
 
         // Setting onclick for Done button
         binding.btnDone.setOnClickListener {
-            if (binding.edtUsername.editText?.text.toString().isEmpty()) {
+            val userName = binding.edtUsername.editText?.text.toString()
+            val userEmailId = binding.edtEmailaddress.text.toString()
+            val userEmailPassword = binding.edtEmailpassword.text.toString()
+            val userPhoneNumber = binding.edtPhonenumber.text.toString()
+            if (userName.isEmpty() || userEmailId.isEmpty() || userEmailPassword.isEmpty() || userPhoneNumber.isEmpty()
+                ) {
                 Toast.makeText(
                     this@SignUpActivity,
-                    "Please enter your name",
+                    "Please enter all details",
                     Toast.LENGTH_SHORT
                 ).show()
             } else {
-                val sharedPreferences = getSharedPreferences("Applogin", MODE_PRIVATE)
-                sharedPreferences.edit().putBoolean("isLoggedIn",true).apply()
+                // Saving User data to SharedPreferences
+                savingDataToSharedPreference(
+                    userName = userName,
+                    userEmailId = userEmailId,
+                    userEmailPassword= userEmailPassword,
+                    userPhoneNumber= userPhoneNumber)
+
+
+                // Launching Home Activity
                 val intent = Intent(this, HomeActivity::class.java)
                 startActivity(intent)
             }
@@ -61,7 +86,7 @@ class SignUpActivity : AppCompatActivity() {
     }
 
 
-    fun openUserGallery() {
+    private fun openUserGallery() {
 
         val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
         startActivityForResult(intent, REQUEST_CODE)
@@ -81,16 +106,29 @@ class SignUpActivity : AppCompatActivity() {
                 binding.imgProfilePhoto.setImageBitmap(bitMap)
                 binding.imgProfilePhoto.background = null
 
-
             }
-
 
         }
 
 
     }
 
+    private fun savingDataToSharedPreference(
+        userName: String,
+        userEmailId: String,
+        userEmailPassword: String,
+        userPhoneNumber: String) {
 
+        val sharedPreferences = getSharedPreferences("Applogin", MODE_PRIVATE)
+        sharedPreferences.edit().apply {
+            putString("userName", userName)
+            putString("userEmailID", userEmailId)
+            putString("userEmailPassword", userEmailPassword)
+            putString("userPhoneNumber", userPhoneNumber)
+            putBoolean("isLoggedIn",true)
+        }.apply()
+
+    }
 
 
 }
