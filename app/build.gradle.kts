@@ -5,6 +5,10 @@ plugins {
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
 
+    // Adding the Google services Gradle plugin
+    id("com.google.gms.google-services")
+
+
 }
 
 android {
@@ -84,6 +88,13 @@ dependencies {
     // Dagger - hilt dependencies
     implementation("com.google.dagger:hilt-android:2.48")
     kapt("com.google.dagger:hilt-android-compiler:2.48")
+
+    // Import the Firebase BoM
+    implementation(platform("com.google.firebase:firebase-bom:33.1.0"))
+
+    // TODO: Add the dependencies for Firebase products you want to use
+    // When using the BoM, don't specify versions in Firebase dependencies
+    implementation("com.google.firebase:firebase-analytics")
 
 
 

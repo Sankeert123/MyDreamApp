@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.example.myApp.databinding.ActivityUserLandingBinding
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.ktx.Firebase
 
 class UserLandingActivity : AppCompatActivity() {
 
@@ -15,9 +17,6 @@ class UserLandingActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        _binding = ActivityUserLandingBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
         // SharedPreferences for remembering login data and launching based on that
         sharedPreferences = getSharedPreferences("Applogin", MODE_PRIVATE)
         val isLogIn = sharedPreferences.getBoolean("isLoggedIn", false)
@@ -29,6 +28,12 @@ class UserLandingActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        // Inflating layout
+        _binding = ActivityUserLandingBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+
+
         binding.btnSignup.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
@@ -36,6 +41,8 @@ class UserLandingActivity : AppCompatActivity() {
         }
 
         binding.btnLogin.setOnClickListener {
+            // Added Firebase Event on click login button
+            Firebase.analytics.logEvent("click_on_login_btn", null)
             val intent = Intent(this, LogInActivity::class.java)
             startActivity(intent)
         }
