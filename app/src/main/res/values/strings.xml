@@ -47,4 +47,5 @@
     <string name="p_s_bunnies">P.S.Bunnies!</string>
     <string name="privacy_policy">Privacy Policy</string>
     <string name="version">v24.4.2/758</string>
+    <string name="msg_token_fmt">Message token FCM %s</string>
 </resources>
